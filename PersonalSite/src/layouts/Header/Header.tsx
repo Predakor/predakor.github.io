@@ -5,7 +5,7 @@ type HeaderProps = {
   children?: ReactNode;
 };
 function Header({ children }: HeaderProps) {
-  return <header>{children}</header>;
+  return <header className={styles.container}>{children}</header>;
 }
 
 export default Header;
