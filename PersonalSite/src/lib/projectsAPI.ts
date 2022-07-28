@@ -1,13 +1,22 @@
-async function getProjects(): Promise<[]> {
+import { Project } from "../../types";
+
+async function fetchProjects(): Promise<Project[]> {
   const url = "https://api.github.com/users/Predakor/repos";
-  const auth = "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";
   const headers = { Accept: "application/vnd.github.mercy-preview+json" };
 
   const result = await fetch(url, { headers });
+  const data: Array<any> = await result.json();
+  const validProjects = data.filter((project) => project.homepage);
 
-  console.log(result.json());
-
-  return [];
+  const projects: Project[] = validProjects.map((project) => ({
+    id: project.id,
+    name: project.name,
+    url: project.html_url,
+    description: project.description,
+    homepage: project.homepage,
+    topics: project.topics,
+  }));
+  return projects;
 }
 
-export { getProjects };
+export { fetchProjects };
