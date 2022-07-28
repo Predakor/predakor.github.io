@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5%;
+  min-width: 70%;
+}
+
+.topicContainer {
+  display: flex;
+  gap: 2%;
+}

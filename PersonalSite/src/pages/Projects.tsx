@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchProjects } from "../lib/projectsAPI";
 import { Project } from "../../types";
-import ProjectCard from "../components/ProjectCard/ProjectCard";
+import ProjectList from "../components/ProjectList/ProjectList";
 
 function Projects() {
+  
   const [projects, setProjects] = useState(Array<Project>);
   async function getProjects() {
     setProjects(await fetchProjects());
@@ -16,11 +17,7 @@ function Projects() {
     <section>
       <button onClick={getProjects}>test</button>
       <h1>My Projects</h1>
-      {projects.length > 0 ? (
-        projects.map((project) => <ProjectCard project={project} key={project.id} />)
-      ) : (
-        <p>loading</p>
-      )}
+      <ProjectList list={projects} />
     </section>
   );
 }
