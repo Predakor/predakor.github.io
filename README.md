@@ -1,2 +1,3 @@
 # PersonalSite
-Created with React(vite) to learn typescript
+Personal site 
+Dynamic portfolio
