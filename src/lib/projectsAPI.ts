@@ -6,7 +6,9 @@ async function fetchProjects(): Promise<Project[]> {
 
   const result = await fetch(url, { headers });
   const data: Array<any> = await result.json();
-  const validProjects = data.filter((project) => project.homepage);
+  const validProjects = data.filter(
+    (project) => project.homepage && project.name !== "PersonalSite"
+  );
 
   const projects: Project[] = validProjects.map((project) => ({
     id: project.id,

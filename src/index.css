@@ -5,8 +5,18 @@
   --secondary-color: #393f4d;
   --accent-color: #feda6a;
 
-  --text-color-important: #ffffff;
-  --text-color-normal: #ffffffbc;
+  --font-size-200: clamp(4px, 1em, 16x);
+  --font-size-300: clamp(8px, 1em, 20x);
+  --font-size-400: clamp(12px, 1.25em, 24px);
+  --font-size-500: clamp(16px 1.5em, 28px);
+  --font-size-600: clamp(20px, 2.5em, 32px);
+  --font-size-700: clamp(24px, 2.75em, 36px);
+  --font-size-800: clamp(28px, 3em, 40px);
+
+  --font-color-h: rgba(255, 255, 255, 0.94);
+  --font-color-m: rgba(255, 255, 255, 0.67);
+  --font-color-l: rgba(255, 255, 255, 0.34);
+  --font-color-d: rgba(255, 255, 255, 0.14);
 }
 
 * {
@@ -21,12 +31,34 @@ html {
   background-color: var(--background-color);
 
   font-family: "Poppins", sans-serif;
-  color: var(--text-color-normal);
+  color: var(--font-color-m);
 }
 header,
 main,
 footer {
   padding-inline: 1%;
+}
+
+h1 {
+  font-size: var(--font-size-800);
+  color: var(--font-color-h);
+}
+h2 {
+  font-size: var(--font-size-700);
+  color: var(--font-color-h);
+}
+h3 {
+  font-size: var(--font-size-600);
+  color: var(--font-color-h);
+}
+
+p {
+  font-size: var(--font-size-500);
+  color: var(--font-color-m);
+}
+
+section > h1 {
+  text-align: center;
 }
 
 #root {

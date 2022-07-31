@@ -1,28 +1,37 @@
 import { Project } from "../../../types";
 import Card from "../Card/Card";
+import Tag from "../Tag/Tag";
+import ProjectImage from "./ProjectImage";
 import styles from "./ProjectCard.module.css";
 
-type propsType = {
-  project: Project;
-};
-function ProjectCard({ project }: propsType) {
+function ProjectCard({ project }: { project: Project }) {
   const { name, url, description, homepage, topics } = project;
+
   return (
-    <Card className={styles.container}>
-      <div>
-        <h2>{name}</h2>
+    <Card className={styles.projectContainer}>
+      <div className={styles.projectImage}>
+        <ProjectImage projectName={name} />
       </div>
 
-      <div>
-        <p>{description}</p>
-        <a href={url}>source code</a>
-        <a href={homepage}>demo</a>
-      </div>
+      <div className={styles.projectContent}>
+        <div>
+          <h2>{name}</h2>
+        </div>
 
-      <div className={styles.topicContainer}>
-        {topics.map((topic, i) => (
-          <div key={i}>{topic}</div>
-        ))}
+        <div className={description}>
+          <p>{description}</p>
+        </div>
+
+        <div>
+          <a href={url}>source code</a>
+          <a href={homepage}>demo</a>
+        </div>
+
+        <div className={styles.TagsContaier}>
+          {topics.map((topic, i) => (
+            <Tag tagName={topic} key={i} />
+          ))}
+        </div>
       </div>
     </Card>
   );

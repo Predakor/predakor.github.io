@@ -1,11 +1,25 @@
-.container {
+.projectContainer {
   display: flex;
-  flex-flow: column nowrap;
-  gap: 5%;
-  min-width: 70%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5%;
+}
+.projectContainer:nth-child(2n) {
+  flex-direction: row-reverse;
 }
 
-.topicContainer {
-  display: flex;
-  gap: 2%;
+.projectContent {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
+  justify-content: center;
+
+  width: 50%;
+  height: 100%;
+}
+.projectContent:nth-child(2n) {
+  /* justify-content: end; */
+}
+.projectImage {
+  width: 50%;
 }

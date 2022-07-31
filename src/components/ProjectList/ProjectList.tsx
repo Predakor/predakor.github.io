@@ -1,11 +1,21 @@
+import { useState, useEffect } from "react";
+import { fetchProjects } from "../../lib/projectsAPI";
 import { Project } from "../../../types";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import styles from "./ProjectList.module.css";
 
-function ProjectList({ list }: { list: Project[] }) {
+function ProjectList() {
+  const [projects, setProjects] = useState(Array<Project>);
+
+  useEffect(() => {
+    (async () => {
+      setProjects(await fetchProjects());
+    })();
+  }, []);
+
   return (
     <div className={styles.container}>
-      {list.map((project, i) => (
+      {projects.map((project, i) => (
         <ProjectCard project={project} key={i} />
       ))}
     </div>
