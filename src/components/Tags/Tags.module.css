@@ -1,0 +1,18 @@
+.tagsContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  list-style: none;
+}
+
+.tag {
+  padding: 5%;
+  border-radius: 1em;
+  box-shadow: var(--shadow);
+  background-color: var(--background-color-2);
+  cursor: default;
+}
+
+.tag:hover {
+  background-color: var(--primary-color);
+}
