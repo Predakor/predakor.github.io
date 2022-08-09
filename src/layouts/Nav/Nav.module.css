@@ -1,9 +1,17 @@
 .container {
   display: flex;
   gap: 3%;
-  padding-block: 1%;
+  font-size: var(--font-size-500);
 }
 .link {
-  color: var(--text-color-important);
+  text-decoration: none;
+  color: var(--paragraph-color);
+}
+.link:hover {
+  color: var(--headline-color);
+  transition: color 0.3s;
+}
+.activeLink {
+  color: var(--headline-color);
   text-decoration: none;
 }

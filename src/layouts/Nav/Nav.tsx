@@ -1,18 +1,20 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Nav.module.css";
 
 function Nav() {
+  const { link, activeLink } = styles;
+  const setActive = (isActive: boolean) => (isActive ? activeLink : link);
   return (
     <nav className={styles.container}>
-      <Link to={"/"} className={styles.link}>
-        home
-      </Link>
-      <Link to={"projects"} className={styles.link}>
-        projects
-      </Link>
-      <Link to={"contact"} className={styles.link}>
-        contact
-      </Link>
+      <NavLink to={"/"} className={({ isActive }) => setActive(isActive)}>
+        Home
+      </NavLink>
+      <NavLink to={"projects"} className={({ isActive }) => setActive(isActive)}>
+        Projects
+      </NavLink>
+      <NavLink to={"contact"} className={({ isActive }) => setActive(isActive)}>
+        Contact
+      </NavLink>
     </nav>
   );
 }
