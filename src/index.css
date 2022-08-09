@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
 :root {
-  --background-color: #202020;
-  --main-color: #1d1e22;
-  --secondary-color: #393f4d;
-  --accent-color: #feda6a;
+  --background-color: #16161a;
+  --main-color: #7f5af0;
+  --secondary-color: #72757e;
+  --tertiary-color: #2cb67d;
+
+  --headline-color: #fffffe;
+  --paragraph-color: #94a1b2;
+
+  --button-color: #ff8906;
 
   --font-size-200: clamp(4px, 1em, 16x);
   --font-size-300: clamp(8px, 1em, 20x);
@@ -13,10 +19,7 @@
   --font-size-700: clamp(24px, 2.75em, 36px);
   --font-size-800: clamp(28px, 3em, 40px);
 
-  --font-color-h: rgba(255, 255, 255, 0.94);
-  --font-color-m: rgba(255, 255, 255, 0.67);
-  --font-color-l: rgba(255, 255, 255, 0.34);
-  --font-color-d: rgba(255, 255, 255, 0.14);
+  --shadow: 0px 2px 10px 1px var(--background-color);
 }
 
 * {
@@ -26,42 +29,21 @@
 }
 
 html {
-  width: 100%;
+  min-width: 100%;
   min-height: 100vh;
   background-color: var(--background-color);
 
   font-family: "Poppins", sans-serif;
-  color: var(--font-color-m);
-}
-header,
-main,
-footer {
-  padding-inline: 1%;
+  color: var(--headline-color);
 }
 
-h1 {
-  font-size: var(--font-size-800);
-  color: var(--font-color-h);
-}
-h2 {
-  font-size: var(--font-size-700);
-  color: var(--font-color-h);
-}
-h3 {
-  font-size: var(--font-size-600);
-  color: var(--font-color-h);
-}
-
-p {
-  font-size: var(--font-size-500);
-  color: var(--font-color-m);
-}
-
-section > h1 {
-  text-align: center;
+:is(p, span, textarea, input, ) {
+  color: var(--paragraph-color);
 }
 
 #root {
   display: flex;
   flex-flow: column nowrap;
+  padding-inline: 1%;
+  text-align: center;
 }

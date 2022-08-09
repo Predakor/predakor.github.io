@@ -11,7 +11,7 @@ type ProjectLinksProps = {
 
 function ProjectLinks({ repository, homepage, children }: ProjectLinksProps) {
   return (
-    <div className={styles.linksContainer}>
+    <div>
       <ExternalLink link={repository} aria={"link to github repository"}>
         <FiGithub className={styles.icon} />
       </ExternalLink>

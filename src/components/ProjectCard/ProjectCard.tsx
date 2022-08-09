@@ -9,7 +9,7 @@ function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div className={styles.projectContainer}>
-      <div className={styles.previewContainer}>
+      <div className={styles.imageContainer}>
         <ProjectImage projectName={name} />
       </div>
 
