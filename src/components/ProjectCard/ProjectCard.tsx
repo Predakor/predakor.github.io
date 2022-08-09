@@ -1,19 +1,19 @@
 import { Project } from "../../../types";
-import Card from "../Card/Card";
-import Tag from "../Tag/Tag";
-import ProjectImage from "./ProjectImage";
+import Tags from "../Tags";
+import ProjectLinks from "./ProjectLinks/ProjectLinks";
+import ProjectImage from "./ProjectImage/ProjectImage";
 import styles from "./ProjectCard.module.css";
 
 function ProjectCard({ project }: { project: Project }) {
   const { name, url, description, homepage, topics } = project;
 
   return (
-    <Card className={styles.projectContainer}>
-      <div className={styles.projectImage}>
+    <div className={styles.projectContainer}>
+      <div className={styles.previewContainer}>
         <ProjectImage projectName={name} />
       </div>
 
-      <div className={styles.projectContent}>
+      <div className={styles.contentContainer}>
         <div>
           <h2>{name}</h2>
         </div>
@@ -22,18 +22,11 @@ function ProjectCard({ project }: { project: Project }) {
           <p>{description}</p>
         </div>
 
-        <div>
-          <a href={url}>source code</a>
-          <a href={homepage}>demo</a>
-        </div>
+        <Tags tags={topics} />
 
-        <div className={styles.TagsContaier}>
-          {topics.map((topic, i) => (
-            <Tag tagName={topic} key={i} />
-          ))}
-        </div>
+        <ProjectLinks repository={url} homepage={homepage} />
       </div>
-    </Card>
+    </div>
   );
 }
 
