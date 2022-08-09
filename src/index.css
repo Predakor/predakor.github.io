@@ -39,7 +39,7 @@ html {
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 h1 {
   font-size: var(--font-size-900);
