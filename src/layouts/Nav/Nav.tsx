@@ -1,22 +1,13 @@
-import { NavLink } from "react-router-dom";
-import styles from "./Nav.module.css";
+import { useMediaQuery } from "react-responsive";
+import DesktopMenu from "../DesktopMenu/DesktopMenu";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 function Nav() {
-  const { link, activeLink } = styles;
-  const setActive = (isActive: boolean) => (isActive ? activeLink : link);
-  return (
-    <nav className={styles.container}>
-      <NavLink to={"/"} className={({ isActive }) => setActive(isActive)}>
-        Home
-      </NavLink>
-      <NavLink to={"projects"} className={({ isActive }) => setActive(isActive)}>
-        Projects
-      </NavLink>
-      <NavLink to={"contact"} className={({ isActive }) => setActive(isActive)}>
-        Contact
-      </NavLink>
-    </nav>
-  );
+  const isDesktop = useMediaQuery({
+    query: "(min-width:992px)",
+  });
+
+  return <>{isDesktop ? <DesktopMenu /> : <HamburgerMenu />}</>;
 }
 
 export default Nav;

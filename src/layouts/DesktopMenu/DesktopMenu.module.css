@@ -1,0 +1,18 @@
+.desktopMenuContainer {
+  display: flex;
+  justify-content: start;
+  gap: 2%;
+}
+.link {
+  transition: color 0.3s;
+}
+.link:hover {
+  color: var(--headline-color);
+  opacity: 0.95;
+  transition: color 0.4s ease-out;
+}
+.active {
+  opacity: 1 !important;
+  color: var(--headline-color);
+  font-weight: 600;
+}

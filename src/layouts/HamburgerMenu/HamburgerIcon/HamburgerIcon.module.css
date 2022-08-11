@@ -1,0 +1,6 @@
+.hamburgerIcon {
+  align-self: flex-end;
+  margin-bottom: 150%;
+  color: var(--main-color);
+  font-size: var(--font-size-900);
+}
