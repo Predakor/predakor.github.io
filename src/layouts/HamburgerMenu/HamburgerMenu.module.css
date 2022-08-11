@@ -17,4 +17,15 @@
 }
 .expanded {
   background-color: black;
+  animation: appear 0.3s;
+}
+
+@keyframes appear {
+  0% {
+    width: 50%;
+    left: 100%;
+  }
+  100% {
+    width: 50%;
+  }
 }
