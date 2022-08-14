@@ -2,10 +2,10 @@
   display: flex;
   justify-content: start;
   gap: 2%;
-  animation: appear 0.5s 0.5s backwards;
 }
 .link {
   transition: color 0.3s;
+  animation: appear 0.5s 0.5s backwards;
 }
 .link:hover {
   color: var(--headline-color);
@@ -19,7 +19,7 @@
 }
 @keyframes appear {
   0% {
-    margin-left: 100%;
+    transform: translateX(100%);
     opacity: 0;
   }
 }

@@ -36,6 +36,7 @@ html {
   font-family: "Poppins", sans-serif;
   text-align: center;
   color: var(--headline-color);
+  overflow-x: hidden;
 }
 
 section {
@@ -58,6 +59,14 @@ h3 {
 }
 :is(header, footer, section) {
   padding: 1%;
+}
+
+body::-webkit-scrollbar {
+  width: 0.4vw;
+  animation: appear;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--main-color);
 }
 
 #root {
