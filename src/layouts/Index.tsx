@@ -1,5 +1,4 @@
 import { FC, ReactNode } from "react";
-import Header from "./Header/Header";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
@@ -7,9 +6,7 @@ import Footer from "./Footer/Footer";
 const Index: FC<{ children?: ReactNode }> = ({ children }) => {
   return (
     <>
-      <Header>
-        <Nav />
-      </Header>
+      <Nav />
       <Main>{children}</Main>
       <Footer />
     </>

@@ -1,30 +1,63 @@
-import { useState } from "react";
+import { AnimationEvent, useState } from "react";
+import { animation, duration } from "../../utils/animations";
 import HamburgerElement from "./HamburgerElement/HamburgerElement";
 import HamburgerIcon from "./HamburgerIcon/HamburgerIcon";
 import styles from "./HamburgerMenu.module.css";
+import navigationList from "../../assets/navigationList";
 
+const openingAnimation = "fadeInRight";
+const closingAnimation = "fadeOutRight";
 function HamburgerMenu() {
-  const [navExpanded, setNavExpanded] = useState(false);
+  const [navIsOpen, setNavIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
-  const closeMenu = () => setNavExpanded(false);
-  const classes = () => `${styles.HamburgerMenuContainer} ${navExpanded ? styles.expanded : ""}`;
+  let currentAnimation = "";
+  let expandedClass = "";
+
+  if (navIsOpen) {
+    currentAnimation = isClosing ? closingAnimation : openingAnimation;
+    expandedClass = styles.expanded;
+  }
+
+  const navAnimation = `${animation(currentAnimation)} ${duration("faster")}`;
+  const navClass = `${styles.HamburgerMenuContainer} ${expandedClass}`;
+  const navClasses = `${navAnimation} ${navClass}`;
+
+  const closeMenu = () => {
+    setIsClosing(true);
+  };
+  const openMenu = () => {
+    setNavIsOpen(true);
+  };
+
+  function animationHandler(e: AnimationEvent) {
+    const animationName = e.animationName;
+
+    if (animationName === closingAnimation) {
+      setNavIsOpen(false);
+      setIsClosing(false);
+    }
+  }
+
+  console.log(isClosing);
   return (
-    <nav className={classes()}>
-      <HamburgerIcon navExpanded={navExpanded} onClick={setNavExpanded} />
-      {navExpanded && (
-        <>
-          <HamburgerElement destination={"/"} onClick={closeMenu}>
-            Home
-          </HamburgerElement>
-          <HamburgerElement destination={"projects"} onClick={closeMenu}>
-            Projects
-          </HamburgerElement>
-          <HamburgerElement destination={"contact"} onClick={closeMenu}>
-            Contact
-          </HamburgerElement>
-        </>
-      )}
-    </nav>
+    <>
+      <HamburgerIcon
+        navExpanded={navIsOpen}
+        navIsClosing={isClosing}
+        onOpen={openMenu}
+        onClose={closeMenu}
+      />
+
+      <nav className={navClasses} onAnimationEnd={(e) => animationHandler(e)}>
+        {(navIsOpen || isClosing) &&
+          navigationList.map((navElement, i) => (
+            <HamburgerElement destination={navElement.path} onClick={closeMenu} key={i}>
+              {navElement.name}
+            </HamburgerElement>
+          ))}
+      </nav>
+    </>
   );
 }
 

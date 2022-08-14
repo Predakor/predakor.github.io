@@ -57,7 +57,7 @@ h3 {
   font-size: var(--font-size-400);
   text-decoration: none;
 }
-:is(header, footer, section) {
+:is(nav, footer, section) {
   padding: 1%;
 }
 

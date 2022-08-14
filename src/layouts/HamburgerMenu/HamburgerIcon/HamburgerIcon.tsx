@@ -1,15 +1,20 @@
-import { FiX, FiMenu } from "react-icons/fi";
 import styles from "./HamburgerIcon.module.css";
 
 type HamburgerIconProps = {
   navExpanded: Boolean;
-  onClick: Function;
+  navIsClosing: Boolean;
+  onOpen: Function;
+  onClose: Function;
 };
-function HamburgerIcon({ navExpanded, onClick }: HamburgerIconProps) {
-  return navExpanded ? (
-    <FiX className={styles.hamburgerIcon} onClick={() => onClick(false)} />
-  ) : (
-    <FiMenu className={styles.hamburgerIcon} onClick={() => onClick(true)} />
+function HamburgerIcon({ navExpanded, navIsClosing, onOpen, onClose }: HamburgerIconProps) {
+  const closed = navExpanded && !navIsClosing ? styles.closed : "";
+  const onClick = navExpanded ? onClose : onOpen;
+  return (
+    <div className={styles.hamburgerIconContainer} onClick={() => onClick()}>
+      <div className={`${styles.hamburgerIcon} ${closed}`}>
+        <div className={styles.bar} />
+      </div>
+    </div>
   );
 }
 

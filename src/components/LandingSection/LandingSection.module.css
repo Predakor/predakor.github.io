@@ -6,19 +6,19 @@
 }
 .landingHeader {
   color: var(--main-color);
-  font-size: clamp(45px, 5em, 60px);
+  font-size: calc(2 * var(--font-size-600));
   font-weight: 900;
 }
-.landingSection > p {
-  --animate-delay: 0.2s;
-}
-
-.bigH2 {
+.landingSection > h2 {
   font-size: var(--font-size-500);
+  --animate-delay: 0.5s;
+}
+.landingSection > p {
+  --animate-delay: 0.3s;
 }
 
 @media (min-width: 992px) {
   .landingHeader {
-    font-size: clamp(80px, 10em, 100px);
+    font-size: calc(2 * var(--font-size-900));
   }
 }
