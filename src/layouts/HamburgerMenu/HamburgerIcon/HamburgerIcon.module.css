@@ -11,30 +11,18 @@
   z-index: 100;
 }
 
-.opened {
-}
-.closed {
-}
-.transforming {
-}
-
 .hamburgerIcon {
   position: relative;
-
-  width: 10vw;
-  height: 10vw;
-
-  color: var(--main-color);
-  font-size: var(--font-size-900);
-  z-index: 100;
-}
-.bar::before,
-.bar::after,
-.bar {
   --bar-width: 100%;
   --bar-height: 1vw;
   --offset: calc(var(--bar-width) / 2);
 
+  --normal-transition: 0.5s;
+}
+
+.bar::before,
+.bar::after,
+.bar {
   display: block;
   content: "";
 
@@ -42,8 +30,7 @@
   height: var(--bar-height);
 
   background-color: var(--main-color);
-
-  transition: 0.5s;
+  transition: var(--normal-transition);
 }
 
 .bar {
@@ -59,21 +46,15 @@
   top: calc(-3 * var(--bar-width));
 }
 
-.closed * {
-  transition: 0.5s;
-}
-
-.closed > .bar::before {
-  transform: translateX(50%) rotateZ(45deg);
-  top: 0%;
-  background-color: var(--main-color);
-}
 .closed > .bar {
   transform: translateX(-50%);
   background: none;
 }
-.closed > .bar::after {
+.closed > .bar::before {
   transform: translateX(50%) rotateZ(-45deg);
   top: 0%;
-  background-color: var(--main-color);
+}
+.closed > .bar::after {
+  transform: translateX(50%) rotateZ(45deg);
+  top: 0%;
 }
