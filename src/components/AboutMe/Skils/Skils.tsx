@@ -7,13 +7,14 @@ const skilList = [
   "Redux",
   "Javascript (ES6+)",
   "Typescript",
+  "Css",
   "Sass",
   "Tailwind",
   "Git/Github",
 ];
 
 function Skils() {
-  const listAnimation = animation("fadeInDownBig");
+  const listAnimation = animation("backInDown");
   return (
     <div className={styles.skilsContainer}>
       <AnimationOnScroll animateIn={slide.left} animateOnce={true} offset={50}>
@@ -22,7 +23,12 @@ function Skils() {
 
       <ul className={styles.skilsList}>
         {skilList.map((skil, i) => (
-          <AnimationOnScroll animateIn={listAnimation} delay={50 * i} key={i}>
+          <AnimationOnScroll
+            animateIn={listAnimation}
+            animateOnce={true}
+            delay={50 * i}
+            offset={100}
+            key={i}>
             <li key={skil}>{skil}</li>
           </AnimationOnScroll>
         ))}

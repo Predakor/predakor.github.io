@@ -1,3 +1,15 @@
+.bioContent {
+  margin-block: 5%;
+}
+.linkContainer {
+  display: flex;
+  gap: 5%;
+}
+.fakeButton {
+  padding: 2%;
+  background-color: var(--main-color);
+  border-radius: 1em;
+}
 @media (min-width: 992px) {
   .bioContainer {
     text-align: left;

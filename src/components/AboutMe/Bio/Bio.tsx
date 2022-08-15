@@ -5,17 +5,37 @@ import styles from "./Bio.module.css";
 
 function Bio() {
   const age = new Date().getUTCFullYear() - 2002;
+  const selectedAnimation = animation("fadeInUpBig");
   return (
     <div className={styles.bioContainer}>
       <AnimationOnScroll animateIn={slide.right} animateOnce={true}>
         <PanelHeader>Profile</PanelHeader>
       </AnimationOnScroll>
-      <AnimationOnScroll animateIn={animation("fadeInUpBig")}>
+
+      <AnimationOnScroll
+        className={styles.bioContent}
+        animateIn={selectedAnimation}
+        animateOnce={true}>
+        <p>{age} years old self taught front end developer </p>
+      </AnimationOnScroll>
+
+      <AnimationOnScroll
+        className={styles.bioContent}
+        animateIn={selectedAnimation}
+        animateOnce={true}
+        delay={200}>
         <p>
-          {age} years old aspiring front end developer Currently I'm looking for my 1st front end
-          job although I don't have any commercial experience you can check my to find out what can
-          I bring to Your company.
+          Currently I'm looking for my first front end job you can check my other projects and
+          github below also if you have any question feel free to contact me
         </p>
+      </AnimationOnScroll>
+
+      <AnimationOnScroll
+        className={styles.linkContainer}
+        animateIn={selectedAnimation}
+        animateOnce={true}>
+        <div className={styles.fakeButton}>work</div>
+        <div className={styles.fakeButton}>contact</div>
       </AnimationOnScroll>
     </div>
   );

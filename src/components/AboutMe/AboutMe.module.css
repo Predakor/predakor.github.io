@@ -1,6 +1,7 @@
 .aboutMeSection {
   display: grid;
   align-items: center;
+  overflow-y: hidden;
 }
 
 @media (min-width: 992px) {
