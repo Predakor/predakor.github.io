@@ -2,8 +2,8 @@ import { AnimationEvent, useState } from "react";
 import { animation, duration } from "../../utils/animations";
 import HamburgerElement from "./HamburgerElement/HamburgerElement";
 import HamburgerIcon from "./HamburgerIcon/HamburgerIcon";
-import styles from "./HamburgerMenu.module.css";
 import navigationList from "../../assets/navigationList";
+import styles from "./HamburgerMenu.module.css";
 
 const openingAnimation = "fadeInRight";
 const closingAnimation = "fadeOutRight";
@@ -23,23 +23,16 @@ function HamburgerMenu() {
   const navClass = `${styles.HamburgerMenuContainer} ${expandedClass}`;
   const navClasses = `${navAnimation} ${navClass}`;
 
-  const closeMenu = () => {
-    setIsClosing(true);
-  };
-  const openMenu = () => {
-    setNavIsOpen(true);
-  };
+  const closeMenu = () => setIsClosing(true);
+  const openMenu = () => setNavIsOpen(true);
 
   function animationHandler(e: AnimationEvent) {
-    const animationName = e.animationName;
+    if (e.animationName !== closingAnimation) return;
 
-    if (animationName === closingAnimation) {
-      setNavIsOpen(false);
-      setIsClosing(false);
-    }
+    setNavIsOpen(false);
+    setIsClosing(false);
   }
 
-  console.log(isClosing);
   return (
     <>
       <HamburgerIcon
