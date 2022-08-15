@@ -12,3 +12,10 @@ export const delay = (amount: number | string): string => {
 export const duration = (animationDurration: string): string => {
   return `${classNamePrefix}${animationDurration}`;
 };
+
+export const slide = {
+  left: animation(`slideInLeft`),
+  right: animation(`slideInRight`),
+  up: animation(`slideInUp`),
+  down: animation(`slideInDown`),
+};

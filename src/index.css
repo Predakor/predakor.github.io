@@ -42,15 +42,6 @@ html {
 section {
   min-height: 100vh;
 }
-h1 {
-  font-size: var(--font-size-900);
-}
-h2 {
-  font-size: var(--font-size-800);
-}
-h3 {
-  font-size: var(--font-size-700);
-}
 
 :is(p, span, textarea, input, li, a) {
   color: var(--paragraph-color);
@@ -69,7 +60,8 @@ body::-webkit-scrollbar-thumb {
   background: var(--main-color);
 }
 
-#root {
-  display: flex;
-  flex-flow: column nowrap;
+@media (min-width: 992px) {
+  main {
+    padding-inline: 10%;
+  }
 }

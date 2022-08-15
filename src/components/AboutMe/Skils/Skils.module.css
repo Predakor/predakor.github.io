@@ -1,0 +1,16 @@
+.skilsList {
+  list-style-position: inside;
+}
+
+@media (min-width: 992px) {
+  .skilsList > li {
+    list-style-type: none;
+  }
+  .skilsContainer {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: right;
+    overflow-y: hidden;
+  }
+}

@@ -1,0 +1,6 @@
+@media (min-width: 992px) {
+  .bioContainer {
+    text-align: left;
+    align-self: flex-start;
+  }
+}
