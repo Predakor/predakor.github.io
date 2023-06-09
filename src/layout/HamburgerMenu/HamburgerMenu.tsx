@@ -1,59 +1,35 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import navigationList from "../../assets/navigationList";
-import { animation, duration } from "../../utils/animations";
-import HamburgerElement from "./HamburgerElement/HamburgerElement";
-import HamburgerIcon from "./HamburgerIcon/HamburgerIcon";
 import styles from "./HamburgerMenu.module.css";
-import { AnimationEvent, useState } from "react";
 
-const openingAnimation = "fadeInRight";
-const closingAnimation = "fadeOutRight";
 function HamburgerMenu() {
   const [navIsOpen, setNavIsOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
 
-  let currentAnimation = "";
-  let expandedClass = "";
+  const showMenu = navIsOpen ? "" : styles.menuClosed;
 
-  if (navIsOpen) {
-    currentAnimation = isClosing ? closingAnimation : openingAnimation;
-    expandedClass = styles.expanded;
-  }
-
-  const navAnimation = `${animation(currentAnimation)} ${duration("faster")}`;
-  const navClass = `${styles.HamburgerMenuContainer} ${expandedClass}`;
-  const navClasses = `${navAnimation} ${navClass}`;
-
-  const closeMenu = () => setIsClosing(true);
-  const openMenu = () => setNavIsOpen(true);
-
-  function animationHandler(e: AnimationEvent) {
-    if (e.animationName !== closingAnimation) return;
-
-    setNavIsOpen(false);
-    setIsClosing(false);
-  }
+  const navigationItems = navigationList.map(({ name, path }) => (
+    <Link to={path}>{name}</Link>
+  ));
 
   return (
     <>
-      <HamburgerIcon
-        navExpanded={navIsOpen}
-        navIsClosing={isClosing}
-        onOpen={openMenu}
-        onClose={closeMenu}
-      />
-
-      <nav className={navClasses} onAnimationEnd={(e) => animationHandler(e)}>
-        {(navIsOpen || isClosing) &&
-          navigationList.map((navElement, i) => (
-            <HamburgerElement
-              destination={navElement.path}
-              onClick={closeMenu}
-              key={i}
-            >
-              {navElement.name}
-            </HamburgerElement>
-          ))}
-      </nav>
+      <nav className={`${styles.container} ${showMenu}`}>{navigationItems}</nav>
+      <label
+        className={styles.hamburgerMenu}
+        aria-label="toogle hamburger menu"
+      >
+        <input
+          id={styles.hamburgerCheckbox}
+          type="checkbox"
+          onClick={(e) => setNavIsOpen(e.currentTarget.checked)}
+        />
+        <span className={styles.hamburgerBars}>
+          <span id={styles.topBar} />
+          <span id={styles.middleBar} />
+          <span id={styles.bottomBar} />
+        </span>
+      </label>
     </>
   );
 }

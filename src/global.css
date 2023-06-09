@@ -41,6 +41,11 @@ html {
   overflow-x: hidden;
 }
 
+#root {
+  display: grid;
+  grid-template-columns: 1fr, auto;
+}
+
 section {
   min-height: 100vh;
 }
@@ -52,21 +57,23 @@ section {
 :is(nav, footer, section) {
   padding: 1%;
 }
+
 button {
   background: none;
   outline: red 1px solid;
   border: none;
 }
-body::-webkit-scrollbar {
+
+::-webkit-scrollbar {
   width: 0.4vw;
   animation: appear;
 }
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: var(--main-color);
 }
 
-@media (min-width: 992px) {
-  main {
-    padding-inline: 10%;
+@media (min-width: 768px) {
+  #root {
+    grid-template-rows: minmax(auto, 3em) 1fr minmax(auto, 3em);
   }
 }
