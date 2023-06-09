@@ -1,9 +1,9 @@
-import { AnimationEvent, useState } from "react";
+import navigationList from "../../assets/navigationList";
 import { animation, duration } from "../../utils/animations";
 import HamburgerElement from "./HamburgerElement/HamburgerElement";
 import HamburgerIcon from "./HamburgerIcon/HamburgerIcon";
-import navigationList from "../../assets/navigationList";
 import styles from "./HamburgerMenu.module.css";
+import { AnimationEvent, useState } from "react";
 
 const openingAnimation = "fadeInRight";
 const closingAnimation = "fadeOutRight";
@@ -45,7 +45,11 @@ function HamburgerMenu() {
       <nav className={navClasses} onAnimationEnd={(e) => animationHandler(e)}>
         {(navIsOpen || isClosing) &&
           navigationList.map((navElement, i) => (
-            <HamburgerElement destination={navElement.path} onClick={closeMenu} key={i}>
+            <HamburgerElement
+              destination={navElement.path}
+              onClick={closeMenu}
+              key={i}
+            >
               {navElement.name}
             </HamburgerElement>
           ))}

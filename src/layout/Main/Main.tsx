@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import styles from "./Main.module.css";
+import { ReactNode } from "react";
 
 type MainProps = {
   children?: ReactNode;

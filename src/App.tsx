@@ -1,14 +1,16 @@
-import { Route, Routes } from "react-router-dom";
-import { Home, Projects, Contact } from "./pages/Index";
-import Layout from "./layouts";
-import "./index.css";
+import "./global.css";
+import Layout from "./layout";
+import { Hero } from "./pages";
+import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
 import "animate.css";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Hero />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

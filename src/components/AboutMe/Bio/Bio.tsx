@@ -1,7 +1,7 @@
-import { AnimationOnScroll } from "react-animation-on-scroll";
 import { animation, slide } from "../../../utils/animations";
 import { PanelHeader } from "../../Headers/Headers";
 import styles from "./Bio.module.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 function Bio() {
   const age = new Date().getUTCFullYear() - 2002;
@@ -15,7 +15,8 @@ function Bio() {
       <AnimationOnScroll
         className={styles.bioContent}
         animateIn={selectedAnimation}
-        animateOnce={true}>
+        animateOnce={true}
+      >
         <p>{age} years old self taught front end developer </p>
       </AnimationOnScroll>
 
@@ -23,17 +24,20 @@ function Bio() {
         className={styles.bioContent}
         animateIn={selectedAnimation}
         animateOnce={true}
-        delay={200}>
+        delay={200}
+      >
         <p>
-          Currently I'm looking for my first front end job you can check my other projects and
-          github below also if you have any question feel free to contact me
+          Currently I'm looking for my first front end job you can check my
+          other projects and github below also if you have any question feel
+          free to contact me
         </p>
       </AnimationOnScroll>
 
       <AnimationOnScroll
         className={styles.linkContainer}
         animateIn={selectedAnimation}
-        animateOnce={true}>
+        animateOnce={true}
+      >
         <div className={styles.fakeButton}>work</div>
         <div className={styles.fakeButton}>contact</div>
       </AnimationOnScroll>

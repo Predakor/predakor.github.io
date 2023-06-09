@@ -9,7 +9,7 @@ function Image({ projectName }: { projectName: string }) {
   return (
     <img
       src={IMAGE_LINKS[projectName]}
-      alt={`picture showing ${projectName} project preview`}
+      alt={`showing ${projectName} project preview`}
       className={styles.projectImage}
     />
   );

@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
 import { fetchProjects } from "../../lib/projectsAPI";
-import { Project } from "../../../types";
+import { Project } from "../../types";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import styles from "./ProjectList.module.css";
+import { useEffect, useState } from "react";
 
 function ProjectList() {
   const [projects, setProjects] = useState(Array<Project>);

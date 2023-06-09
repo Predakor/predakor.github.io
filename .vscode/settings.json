@@ -1,3 +1,7 @@
 {
-  "editor.defaultFormatter": "rome.rome"
+  "editor.defaultFormatter": "rome.rome",
+  "editor.formatOnSave": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "rome.rome"
+  }
 }

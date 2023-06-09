@@ -4,7 +4,10 @@ import styles from "./Footer.module.css";
 function Footer() {
   return (
     <footer className={styles.container}>
-      <ExternalLink link={"https://github.com/Predakor"} aria={"Link to my Github page"}>
+      <ExternalLink
+        link={"https://github.com/Predakor"}
+        aria={"Link to my Github page"}
+      >
         <p className={styles.githubLink}>Created by Patryk Buśko</p>
       </ExternalLink>
     </footer>

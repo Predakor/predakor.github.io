@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
 import ExternalLink from "../../ExternalLink/ExternalLink";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
 import styles from "./ProjectLinks.module.css";
+import { ReactNode } from "react";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 type ProjectLinksProps = {
   repository: string;

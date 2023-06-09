@@ -1,14 +1,14 @@
-import { Project } from "../../../types";
+import { Project } from "../../types";
 import Tags from "../Tags";
-import ProjectLinks from "./ProjectLinks/ProjectLinks";
-import ProjectImage from "./ProjectImage/ProjectImage";
 import styles from "./ProjectCard.module.css";
+import ProjectImage from "./ProjectImage/ProjectImage";
+import ProjectLinks from "./ProjectLinks/ProjectLinks";
 
 function ProjectCard({ project }: { project: Project }) {
   const { name, url, description, homepage, topics } = project;
 
   return (
-    <div className={styles.projectContainer}>
+    <article className={styles.projectContainer}>
       <div className={styles.imageContainer}>
         <ProjectImage projectName={name} />
       </div>
@@ -26,7 +26,7 @@ function ProjectCard({ project }: { project: Project }) {
 
         <ProjectLinks repository={url} homepage={homepage} />
       </div>
-    </div>
+    </article>
   );
 }
 

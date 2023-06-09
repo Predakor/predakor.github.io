@@ -2,10 +2,9 @@ import { animation, delay } from "../../utils/animations";
 import styles from "./LandingSection.module.css";
 
 function LandingSection() {
-  const age = new Date().getUTCFullYear() - 2002;
-  let c = 3;
+  const age = new Date().getFullYear() - 2002;
 
-  const incrementDelay = () => delay(c++);
+  const incrementDelay = () => delay(100);
   const pAnimation = () => `${animation("fadeInUp")} ${incrementDelay()}`;
 
   const h1Animation = `${animation("fadeInDownBig")}`;
@@ -13,9 +12,13 @@ function LandingSection() {
 
   return (
     <section className={styles.landingSection}>
-      <h1 className={`${styles.landingHeader} ${h1Animation}`}>Hi I'm Patrick</h1>
+      <h1 className={`${styles.landingHeader} ${h1Animation}`}>
+        Hi I'm Patrick
+      </h1>
 
-      <h2 className={`${styles.bigH2} ${h2Animation}`}>An aspiring front end developer</h2>
+      <h2 className={`${styles.bigH2} ${h2Animation}`}>
+        An aspiring front end developer
+      </h2>
 
       <p className={pAnimation()}>I'am {age} years old front wannabie</p>
       <p className={pAnimation()}>Currently I'm looking for my first job</p>

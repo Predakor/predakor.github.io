@@ -1,7 +1,7 @@
 import AboutMe from "../components/AboutMe/AboutMe";
 import LandingSection from "../components/LandingSection/LandingSection";
 
-function Home() {
+function Hero() {
   return (
     <div>
       <LandingSection />
@@ -9,4 +9,4 @@ function Home() {
     </div>
   );
 }
-export default Home;
+export default Hero;

@@ -14,8 +14,8 @@ export const duration = (animationDurration: string): string => {
 };
 
 export const slide = {
-  left: animation(`slideInLeft`),
-  right: animation(`slideInRight`),
-  up: animation(`slideInUp`),
-  down: animation(`slideInDown`),
+  left: animation("slideInLeft"),
+  right: animation("slideInRight"),
+  up: animation("slideInUp"),
+  down: animation("slideInDown"),
 };

@@ -1,7 +1,7 @@
-import { AnimationOnScroll } from "react-animation-on-scroll";
 import { animation, slide } from "../../../utils/animations";
 import { PanelHeader } from "../../Headers/Headers";
 import styles from "./Skils.module.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 const skilList = [
   "React",
   "Redux",
@@ -28,7 +28,8 @@ function Skils() {
             animateOnce={true}
             delay={50 * i}
             offset={100}
-            key={i}>
+            key={i}
+          >
             <li key={skil}>{skil}</li>
           </AnimationOnScroll>
         ))}

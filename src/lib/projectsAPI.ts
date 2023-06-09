@@ -1,4 +1,4 @@
-import { Project } from "../../types";
+import { Project } from "../types";
 
 async function fetchProjects(): Promise<Project[]> {
   const url = "https://api.github.com/users/Predakor/repos";
@@ -7,7 +7,7 @@ async function fetchProjects(): Promise<Project[]> {
   const result = await fetch(url, { headers });
   const data: Array<any> = await result.json();
   const validProjects = data.filter(
-    (project) => project.homepage && project.name !== "PersonalSite"
+    (project) => project.homepage && project.name !== "PersonalSite",
   );
 
   const projects: Project[] = validProjects.map((project) => ({
