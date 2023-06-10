@@ -3,5 +3,8 @@
   "editor.formatOnSave": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "rome.rome"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

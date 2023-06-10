@@ -1,12 +1,12 @@
 import AboutMe from "../components/AboutMe/AboutMe";
-import LandingSection from "../components/LandingSection/LandingSection";
+import LandingSection from "../components/LandingSection/HeroSection";
 
 function Hero() {
   return (
-    <div>
+    <>
       <LandingSection />
       <AboutMe />
-    </div>
+    </>
   );
 }
 export default Hero;

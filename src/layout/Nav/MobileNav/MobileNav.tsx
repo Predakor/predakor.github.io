@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import navigationList from "../../assets/navigationList";
-import styles from "./HamburgerMenu.module.css";
+import navigationList from "../../../assets/navigationList";
+import styles from "./MobileNav.module.scss";
 
-function HamburgerMenu() {
+function MobileNav() {
   const [navIsOpen, setNavIsOpen] = useState(false);
 
   const showMenu = navIsOpen ? "" : styles.menuClosed;
@@ -34,4 +34,4 @@ function HamburgerMenu() {
   );
 }
 
-export default HamburgerMenu;
+export default MobileNav;

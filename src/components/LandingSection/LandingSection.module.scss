@@ -1,0 +1,26 @@
+.landingHeader {
+  color: var(--main-color);
+  font-size: calc(2 * var(--font-size-600));
+  font-weight: 900;
+}
+
+.landingSection {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 1em;
+
+  h2 {
+    font-size: var(--font-size-500);
+    --animate-delay: 0.5s;
+  }
+  p {
+    --animate-delay: 0.3s;
+  }
+}
+
+@media (min-width: 992px) {
+  .landingHeader {
+    font-size: calc(2 * var(--font-size-900));
+  }
+}

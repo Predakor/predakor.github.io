@@ -1,7 +1,7 @@
-import DesktopMenu from "../DesktopMenu/DesktopMenu";
-import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
-import styles from "./Nav.module.css";
 import { useMediaQuery } from "react-responsive";
+import DesktopNav from "./DesktopNav/DesktopNav";
+import MobileNav from "./MobileNav/MobileNav";
+import styles from "./Nav.module.css";
 
 function Nav() {
   const isDesktop = useMediaQuery({
@@ -10,7 +10,7 @@ function Nav() {
 
   return (
     <header className={styles.navigationContainer}>
-      {isDesktop ? <DesktopMenu /> : <HamburgerMenu />}
+      {isDesktop ? <DesktopNav /> : <MobileNav />}
     </header>
   );
 }

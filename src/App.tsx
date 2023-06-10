@@ -3,10 +3,10 @@ import Layout from "./layout";
 import { Hero } from "./pages";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
-import "animate.css";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
+  //remember to remove unused libraried eg. react-on-scroll
   return (
     <Layout>
       <Routes>
