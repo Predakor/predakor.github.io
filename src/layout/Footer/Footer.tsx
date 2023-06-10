@@ -2,6 +2,7 @@ import ExternalLink from "../../components/ExternalLink/ExternalLink";
 import styles from "./Footer.module.css";
 
 function Footer() {
+  return null;
   return (
     <footer className={styles.container}>
       <ExternalLink

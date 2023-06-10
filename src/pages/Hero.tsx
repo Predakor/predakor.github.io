@@ -1,12 +1,14 @@
-import AboutMe from "../components/AboutMe/AboutMe";
 import LandingSection from "../components/LandingSection/HeroSection";
+import { Skils } from "../sections";
+import AboutMe from "../sections/AboutMe/AboutMe";
 
-function Hero() {
+function Homepage() {
   return (
     <>
       <LandingSection />
       <AboutMe />
+      <Skils />
     </>
   );
 }
-export default Hero;
+export default Homepage;

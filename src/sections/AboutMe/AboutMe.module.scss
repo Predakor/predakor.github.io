@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  color: var(--background-color);
+  background-color: var(--tertiary-color);
+
+  .header {
+    grid-column: 1/-1;
+    font-weight: bolder;
+
+    span {
+      font-size: var(--font-size-900);
+
+      color: var(--main-color);
+    }
+  }
+  .subHeader {
+    font-size: var(--font-size-600);
+  }
+}
+
+.traitsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-align: start;
+
+  .trait > span {
+    color: var(--main-color);
+    font-weight: bold;
+  }
+}
+
+.left {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}

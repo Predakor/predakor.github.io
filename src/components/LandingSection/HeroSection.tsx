@@ -1,12 +1,7 @@
-import { animation, delay } from "../../utils/animations";
+import { motion } from "framer-motion";
 import styles from "./LandingSection.module.scss";
 
-import { motion } from "framer-motion";
-
 function LandingSection() {
-  const h1Animation = `${animation("fadeInDownBig")}`;
-  const h2Animation = `${animation("fadeInUp")} ${delay(1)}`;
-
   return (
     <section className={styles.landingSection}>
       <motion.h1
@@ -18,14 +13,21 @@ function LandingSection() {
         Hi I'm Patrick
       </motion.h1>
 
-      <motion.h2
-        animate={{ scale: 1, opacity: 1 }}
-        initial={{ scale: 0, opacity: 0 }}
-        transition={{ delay: 0.5, type: "tween" }}
-        className={`${styles.bigH2}`}
-      >
-        An aspiring front end developer
-      </motion.h2>
+      <div className={styles.scrollHint}>
+        {/* rome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+        <motion.svg
+          fillOpacity={0}
+          stroke="var(--tertiary-color)"
+          strokeWidth={"0.25em"}
+          width={100}
+          height={100}
+          animate={{ y: ["-25%", "0%"] }}
+          transition={{ duration: 1, repeat: Infinity, repeatType: "mirror" }}
+        >
+          <motion.path d="M10,40 L50,90 L90,40" />
+          <motion.path initial={{ y: "-30%" }} d="M10,40 L50,90 L90,40" />
+        </motion.svg>
+      </div>
     </section>
   );
 }

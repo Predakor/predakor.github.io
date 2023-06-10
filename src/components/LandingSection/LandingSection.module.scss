@@ -5,9 +5,9 @@
 }
 
 .landingSection {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
+  display: grid;
+  place-items: end;
+  justify-items: center;
   gap: 1em;
 
   h2 {
@@ -16,6 +16,9 @@
   }
   p {
     --animate-delay: 0.3s;
+  }
+  .scrollHint {
+    width: 2em;
   }
 }
 

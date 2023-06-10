@@ -1,4 +1,4 @@
-import "./global.css";
+import "./global.scss";
 import Layout from "./layout";
 import { Hero } from "./pages";
 import Contact from "./pages/Contact";
