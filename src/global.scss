@@ -36,6 +36,9 @@ html {
   color: var(--headline-color);
   font-family: "Poppins", sans-serif;
   text-align: center;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-snap-stop: "always";
 
   overflow-x: hidden;
 
@@ -57,7 +60,7 @@ html {
 
 section {
   min-height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
 
 footer {
@@ -94,9 +97,6 @@ button {
 }
 
 @media (min-width: 768px) {
-  html {
-    scroll-snap-type: y mandatory;
-  }
   #root {
     grid-template-rows: minmax(auto, 3em) 1fr minmax(auto, 3em);
   }
