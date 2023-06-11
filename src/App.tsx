@@ -6,7 +6,6 @@ import Projects from "./pages/Projects";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-  //remember to remove unused libraried eg. react-on-scroll
   return (
     <Layout>
       <Routes>
