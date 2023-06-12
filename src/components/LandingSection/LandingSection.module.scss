@@ -1,32 +1,26 @@
-.landingHeader {
-  color: var(--main-color);
-  font-size: calc(2 * var(--font-size-600));
-  font-weight: 900;
-}
-
 .landingSection {
   display: grid;
+  grid-template-rows: 1fr 1fr;
   place-items: end;
   justify-items: center;
   gap: 1em;
 
-  h2 {
-    font-size: var(--font-size-500);
-    --animate-delay: 0.5s;
+  .landingHeader {
+    color: var(--tertiary-color);
+    font-size: calc(2 * var(--font-size-600));
+    font-weight: 900;
   }
-  p {
-    --animate-delay: 0.3s;
-  }
+
   .scrollHint {
-    width: 2em;
-    stroke: var(--main-color);
+    width: 3em;
+    stroke: var(--tertiary-color);
     stroke-width: 0.5em;
     stroke-linecap: round;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .landingHeader {
-    font-size: calc(2 * var(--font-size-900));
+    font-size: calc(2 * var(--font-size-1000));
   }
 }

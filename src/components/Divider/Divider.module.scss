@@ -1,0 +1,30 @@
+$size: 0.125em;
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  width: 100%;
+
+  .line {
+    background: var(--paragraph-color);
+    flex-grow: 1;
+    height: $size;
+    border-radius: 1em;
+  }
+}
+
+.fullLine {
+  gap: 0;
+}
+
+@media (min-width: 768px) {
+  .divider {
+    flex-flow: column;
+    height: 100%;
+    .line {
+      width: $size;
+    }
+  }
+}
