@@ -11,10 +11,11 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.article
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      whileInView={{ y: ["30%", "0%"], opacity: [0, 1] }}
+      transition={{ delay: 0.2, duration: 0.6 }}
       className={styles.project}
     >
-      <h3>{name}</h3>
+      <motion.h3>{name}</motion.h3>
       <ProjectImage projectName={name} />
 
       <div className={styles.contentContainer}>

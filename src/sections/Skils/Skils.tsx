@@ -23,9 +23,8 @@ const tools = [
 ];
 
 const list = {
-  hide: { opacity: 0 },
+  hide: {},
   pop: {
-    opacity: [1],
     transition: {
       when: "beforeChildren",
       staggerChildren: 0.1,

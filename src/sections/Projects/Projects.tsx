@@ -9,16 +9,11 @@ function Projects() {
   return (
     <section id="projects" className={styles.containter}>
       <h2 className={styles.header}>My Projects</h2>
-      <motion.div
-        className={styles.projectsContainer}
-        initial={{ y: 200 }}
-        whileInView={{ y: 0 }}
-        transition={{ delay: 0.5 }}
-      >
+      <div className={styles.projectsContainer}>
         {projects.map((project, i) => (
           <ProjectCard project={project} key={project.id} />
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }
