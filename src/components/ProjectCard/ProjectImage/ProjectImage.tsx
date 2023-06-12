@@ -1,8 +1,12 @@
 import styles from "./ProjectImage.module.css";
 
 const IMAGE_LINKS: { [key: string]: string } = {
-  Tasker: "https://i.imgur.com/ETjSrUMl.png",
-  Typer: "https://i.imgur.com/7peB9vRl.png",
+  tasker:
+    "https://user-images.githubusercontent.com/86599904/240371998-9ed3d278-a444-4ceb-aec7-b6f226bf5ee2.png",
+  typer:
+    "https://user-images.githubusercontent.com/86599904/240371998-9ed3d278-a444-4ceb-aec7-b6f226bf5ee2.png",
+  "spotify-web-player":
+    "https://user-images.githubusercontent.com/86599904/244343364-091504a2-a4dc-4ddc-8cb5-0087658a7d53.png",
 };
 
 function Image({ projectName }: { projectName: string }) {

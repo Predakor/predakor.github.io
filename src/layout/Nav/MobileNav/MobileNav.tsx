@@ -8,13 +8,14 @@ function MobileNav() {
 
   const showMenu = navIsOpen ? "" : styles.menuClosed;
 
-  const navigationItems = navigationList.map(({ name, path }) => (
-    <Link to={path}>{name}</Link>
-  ));
-
   return (
-    <>
-      <nav className={`${styles.container} ${showMenu}`}>{navigationItems}</nav>
+    <aside>
+      <nav className={`${styles.container} ${showMenu}`}>
+        {navigationList.map(({ name, path }) => (
+          <a href={path}>{name}</a>
+        ))}
+      </nav>
+
       <label
         className={styles.hamburgerMenu}
         aria-label="toogle hamburger menu"
@@ -30,7 +31,7 @@ function MobileNav() {
           <span id={styles.bottomBar} />
         </span>
       </label>
-    </>
+    </aside>
   );
 }
 

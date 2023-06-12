@@ -6,9 +6,11 @@ type NavigationElement = {
 };
 
 const navigationList: NavigationListType = [
-  { name: "Home", path: "/" },
-  { name: "Projects", path: "/projects" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "#" },
+  { name: "About", path: "#aboutme" },
+  { name: "Skils", path: "#skils" },
+  { name: "Projects", path: "#projects" },
+  { name: "Contact", path: "#contact" },
 ];
 
 export default navigationList;

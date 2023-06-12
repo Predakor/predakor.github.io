@@ -7,7 +7,7 @@ const variants = {
 };
 function LandingSection() {
   return (
-    <section className={styles.landingSection}>
+    <section id={"homepage"} className={styles.landingSection}>
       <motion.h1
         variants={variants}
         animate="slideIn"

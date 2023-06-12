@@ -1,0 +1,12 @@
+.project {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 1em;
+  padding: 0.5em;
+}
+
+.contentContainer {
+}
+
+@media (min-width: 992px) {
+}

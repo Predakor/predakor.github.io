@@ -24,7 +24,7 @@ const traits = [
 
 function AboutMe() {
   return (
-    <section className={styles.container}>
+    <section id="aboutme" className={styles.container}>
       <h2 className={styles.header}>
         <span>A front end</span> developer
       </h2>

@@ -1,18 +1,16 @@
+import LandingSection from "./components/LandingSection/HeroSection";
 import "./global.scss";
 import Layout from "./layout";
-import { Hero } from "./pages";
-import Contact from "./pages/Contact";
-import Projects from "./pages/Projects";
-import { Route, Routes } from "react-router-dom";
+import { AboutMe, Contact, Projects, Skils } from "./sections";
 
 function App() {
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <LandingSection />
+      <AboutMe />
+      <Skils />
+      <Projects />
+      <Contact />
     </Layout>
   );
 }

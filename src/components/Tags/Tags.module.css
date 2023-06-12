@@ -1,14 +1,18 @@
 .tagsContainer {
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   gap: 0.5em;
-  list-style: none;
 }
 
 .tag {
-  padding: 0.5em;
-  border-radius: 1em;
-  border: 0.15em solid var(--second-color);
+  padding: 0.5em 1em;
+  border-radius: 2.5em;
+  font-size: 0.75em;
 
-  color: var(--tertiary-color);
+  word-break: keep-all;
+  white-space: nowrap;
+  background-color: var(--tertiary-color);
+  color: var(--headline-color);
+  cursor: default;
 }

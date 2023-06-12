@@ -12,14 +12,12 @@ function DesktopMenu() {
       className={styles.desktopMenuContainer}
     >
       {navigationList.map(({ name, path }) => (
-        <NavLink
-          className={({ isActive }) =>
-            `${styles.link} ${isActive ? styles.active : ""}`
-          }
-          to={path}
+        <a
+          className={`${styles.link} ${false ? styles.active : ""}`}
+          href={path}
         >
           {name}
-        </NavLink>
+        </a>
       ))}
     </motion.nav>
   );

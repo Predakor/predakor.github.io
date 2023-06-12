@@ -5,7 +5,7 @@ import styles from "./Nav.module.css";
 
 function Nav() {
   const isDesktop = useMediaQuery({
-    query: "(min-width:992px)",
+    query: "(min-width:768px)",
   });
 
   return (
