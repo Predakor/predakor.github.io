@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
 import navigationList from "../../../assets/navigationList";
 import styles from "./DesktopNav.module.scss";
 
