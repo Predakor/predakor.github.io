@@ -1,21 +1,31 @@
+$color: var(--tertiary-color);
+
 .landingSection {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  place-items: end;
-  justify-items: center;
+  place-items: end center;
   gap: 1em;
 
+  height: 100dvh;
+
   .landingHeader {
-    color: var(--tertiary-color);
+    color: $color;
     font-size: calc(2 * var(--font-size-600));
     font-weight: 900;
   }
 
   .scrollHint {
-    width: 3em;
-    stroke: var(--tertiary-color);
-    stroke-width: 0.5em;
-    stroke-linecap: round;
+    display: grid;
+    place-content: center;
+
+    font-size: var(--font-size-1000);
+    color: $color;
+
+    &:focus-visible {
+      outline: 2px solid $color;
+      border-radius: 100%;
+      opacity: 1 !important ;
+    }
   }
 }
 

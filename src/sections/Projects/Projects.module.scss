@@ -1,8 +1,8 @@
 .containter {
   display: grid;
   background: var(--main-color);
-  scroll-snap-type: none;
   grid-template-rows: auto 1fr;
+  margin-bottom: 20em;
   gap: 2em;
 
   .header {
@@ -10,17 +10,18 @@
   }
 
   .projectsContainer {
-    padding: 2em;
     display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
     gap: 2em;
+    padding: 2em;
   }
 }
 
 @media (min-width: 678px) {
   .containter {
     .projectsContainer {
-      grid-auto-flow: column;
-      align-items: stretch;
+      align-items: center;
     }
   }
 }

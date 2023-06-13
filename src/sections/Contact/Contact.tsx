@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import Divider from "../../components/Divider/Divider";
-import Email from "../../components/Email/Email";
+import EmailForm from "../../components/EmailForm/EmailForm";
 import Socials from "../../components/Socials/Socials";
 import styles from "./Contact.module.scss";
 
@@ -18,14 +18,14 @@ function Contact() {
           className={styles.emailContainer}
         >
           <motion.h3 className={styles.subHeader}>Email</motion.h3>
-          <Email />
+          <EmailForm />
         </motion.div>
 
         <button className={styles.resumeButton} type="button">
           Get resume
         </button>
 
-        <Divider />
+        {isMobile ? <Divider /> : <hr />}
 
         <motion.div
           whileInView={{ y: isMobile ? "0%" : "-20%" }}

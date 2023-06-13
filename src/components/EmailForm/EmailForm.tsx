@@ -1,4 +1,4 @@
-import styles from "./Email.module.scss";
+import styles from "./EmailForm.module.scss";
 
 function Email() {
   return (
@@ -34,7 +34,7 @@ function Email() {
       <textarea
         name="message"
         id="message"
-        placeholder="your message"
+        placeholder="Your message"
         rows={4}
         required
       />
