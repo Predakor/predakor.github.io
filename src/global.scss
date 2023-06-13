@@ -44,8 +44,8 @@ html {
   overflow-x: clip;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
+  scroll-snap-type: y proximity;
 
   &::-webkit-scrollbar {
     width: 0.4vw;
@@ -81,7 +81,6 @@ section {
   h2 {
     margin-top: 1em;
     font-size: var(--font-size-1000);
-    font-weight: bolder;
   }
 
   h3 {
@@ -125,7 +124,22 @@ button {
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 @media (min-width: 768px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
   #root {
     grid-template-rows: minmax(auto, 3em) 1fr minmax(auto, 3em);
   }

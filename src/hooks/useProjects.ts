@@ -14,7 +14,7 @@ function useProjects() {
 
       const data: Array<Project> = await res.json();
       const validProjects = data.filter((project) => {
-        return project.homepage && project.name !== "PersonalSite";
+        return project.homepage && project.name !== "predakor.github.io";
       });
 
       setProjects(validProjects);

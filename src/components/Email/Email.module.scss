@@ -1,0 +1,31 @@
+@mixin dotted() {
+  border: 0.125em dotted var(--tertiary-color);
+
+  color: var(--paragraph-color);
+  font-size: var(--font-size-400);
+
+  transition: 300ms;
+
+  &:focus-visible {
+    outline: none;
+    border-style: solid;
+    border-radius: 0.5em;
+    color: var(--headline-color);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  :is(input, textarea) {
+    @include dotted();
+    flex-grow: 1;
+    max-width: 90vw;
+    padding: 1em;
+
+    background: none;
+    resize: none;
+  }
+}

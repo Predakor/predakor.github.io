@@ -1,65 +1,57 @@
-@mixin dotted() {
-  width: 100%;
-
-  border: 0.125em dotted var(--tertiary-color);
-  border-offset: 0.25em;
-
-  color: var(--paragraph-color);
-  font-size: var(--font-size-400);
-
-  transition: 300ms;
-
-  &:focus-visible {
-    outline: none;
-    border-style: solid;
-    border-radius: 0.5em;
-    color: var(--headline-color);
-  }
-}
-
 .container {
-  display: grid;
-  place-items: center;
   .header {
     color: var(--main-color);
     grid-column: 1/-1;
   }
   .subHeader {
+    display: none;
   }
-}
-
-.emailForm {
-  display: grid;
-  grid-template-rows: auto auto auto 1fr;
-  gap: 2em;
-
-  label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  .otherContainer {
+    display: grid;
+    gap: 1em;
   }
-  :is(input, textarea) {
-    @include dotted();
-    padding: 0.5em;
-    background: none;
-    resize: none;
+  .emailContainer {
+    display: grid;
+    gap: 1em;
+    .emailForm {
+      padding: 1em;
+    }
+  }
+  .socialsContainer {
+    .resumeButton {
+      display: none;
+    }
   }
 }
 
 @media (min-width: 678px) {
+  .otherContainer {
+    grid-template-columns: 1fr auto auto;
+  }
+}
+@media (min-width: 1024px) {
   .container {
-    grid-template-columns: 1fr auto 1fr;
     .divider {
       align-self: center;
     }
-  }
-  .emailForm {
-    padding: 1em;
+    .subHeader {
+      display: block;
+    }
+    .otherContainer {
+      place-content: center;
+      gap: 4em;
+      transition: 300ms;
+
+      .socialsContainer {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        .resumeButton {
+          display: block;
+        }
+      }
+    }
+    .resumeButton {
+      display: none;
+    }
   }
 }

@@ -1,60 +1,43 @@
+import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import Divider from "../../components/Divider/Divider";
+import Email from "../../components/Email/Email";
+import Socials from "../../components/Socials/Socials";
 import styles from "./Contact.module.scss";
 
 function Contact() {
+  const isMobile = useMediaQuery({ maxWidth: "1024px" });
   return (
     <section id="contact" className={styles.container}>
       <h2 className={styles.header}>Reach Me</h2>
-      <div>
-        <form
-          action="mailto:patrykbusko[work]@gmail.com"
-          method="post"
-          autoComplete="on"
-          className={styles.emailForm}
+
+      <div className={styles.otherContainer}>
+        <motion.div
+          whileInView={{ y: isMobile ? "0%" : "20%" }}
+          transition={{ delay: 0.2, type: "tween" }}
+          className={styles.emailContainer}
         >
-          <h3 className={styles.subHeader}>Email</h3>
+          <motion.h3 className={styles.subHeader}>Email</motion.h3>
+          <Email />
+        </motion.div>
 
-          <label htmlFor="name">your name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            maxLength={32}
-            placeholder="Your name"
-          />
+        <button className={styles.resumeButton} type="button">
+          Get resume
+        </button>
 
-          <label htmlFor="email">your name</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            maxLength={40}
-            placeholder="Your email"
-          />
+        <Divider />
 
-          <label htmlFor="message">your name</label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="your message"
-            rows={4}
-          />
-
-          <button type="submit">Send email</button>
-        </form>
-      </div>
-
-      <Divider>OR</Divider>
-
-      <div>
-        <h3 className={styles.subHeader}>Socials</h3>
-        <ul>
-          <li>linkedIN</li>
-          <li>Github</li>
-          <li>Discord</li>
-          <li>Email</li>
-          <button type="button">Get resume</button>
-        </ul>
+        <motion.div
+          whileInView={{ y: isMobile ? "0%" : "-20%" }}
+          transition={{ delay: 0.2, type: "tween" }}
+          className={styles.socialsContainer}
+        >
+          <h3 className={styles.subHeader}>Socials</h3>
+          <Socials />
+          <button className={styles.resumeButton} type="button">
+            Get resume
+          </button>
+        </motion.div>
       </div>
     </section>
   );
