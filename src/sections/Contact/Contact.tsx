@@ -6,14 +6,14 @@ import Socials from "../../components/Socials/Socials";
 import styles from "./Contact.module.scss";
 
 function Contact() {
-  const isMobile = useMediaQuery({ maxWidth: "1024px" });
+  const isLargeScreen = useMediaQuery({ minWidth: "1024px" });
   return (
     <section id="contact" className={styles.container}>
       <h2 className={styles.header}>Reach Me</h2>
 
       <div className={styles.otherContainer}>
         <motion.div
-          whileInView={{ y: isMobile ? "0%" : "20%" }}
+          whileInView={{ y: isLargeScreen ? ["0%", "15%"] : "0%" }}
           transition={{ delay: 0.2, type: "tween" }}
           className={styles.emailContainer}
         >
@@ -25,10 +25,10 @@ function Contact() {
           Get resume
         </button>
 
-        {isMobile ? <Divider /> : <hr />}
+        {isLargeScreen ? <hr /> : <Divider />}
 
         <motion.div
-          whileInView={{ y: isMobile ? "0%" : "-20%" }}
+          whileInView={{ y: isLargeScreen ? ["0%", "-15%"] : "0%" }}
           transition={{ delay: 0.2, type: "tween" }}
           className={styles.socialsContainer}
         >

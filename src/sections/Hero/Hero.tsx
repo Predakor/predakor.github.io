@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
-import styles from "./LandingSection.module.scss";
+import styles from "./Hero.module.scss";
 
 const animationOrder = {
   headerSlide: 0.3,
@@ -12,7 +12,7 @@ const arrowV = {
   slideIn: { y: 0, opacity: 1 },
 };
 
-function LandingSection() {
+function HeroSection() {
   return (
     <section id={"homepage"} className={styles.landingSection}>
       <motion.h1
@@ -48,4 +48,4 @@ function LandingSection() {
   );
 }
 
-export default LandingSection;
+export default HeroSection;

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { PanelHeader } from "../../components/Headers/Headers";
 import MotionSVG from "../../components/MotionSVG";
 import styles from "./AboutMe.module.scss";
 
