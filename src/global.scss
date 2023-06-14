@@ -73,7 +73,6 @@ section {
   place-content: center;
   gap: 1em;
 
-  margin-block: 10em;
   min-height: 100vh;
   padding: 1em;
 
@@ -146,6 +145,10 @@ button {
   }
 
   section {
+    margin-block: 10em;
     padding: 2em;
+    .header {
+      grid-column: 1/-1;
+    }
   }
 }

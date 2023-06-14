@@ -1,17 +1,22 @@
-.desktopMenuContainer {
-  display: flex;
-  justify-content: start;
-  gap: 0.5em;
-}
-.link {
-  color: var(--headline-color);
-  transition: color 0.3s;
+.container {
+  position: sticky;
+  top: 1px;
+  z-index: 100;
+  .links {
+    display: flex;
+    gap: 0.5em;
+    a {
+      color: var(--headline-color);
+      transition: color 0.3s;
 
-  &:hover {
-    opacity: 0.95;
-    color: var(--main-color);
+      &:hover {
+        opacity: 0.95;
+        color: var(--main-color);
+      }
+    }
   }
 }
+
 .active {
   color: var(--main-color);
 }

@@ -1,20 +1,25 @@
 import { useState } from "react";
-import navigationList from "../../../assets/navigationList";
+import { NavigationElement } from "../Nav";
 import styles from "./MobileNav.module.scss";
 
-function MobileNav() {
+interface Props {
+  items: NavigationElement[];
+}
+
+function MobileNav({ items }: Props) {
   const [navIsOpen, setNavIsOpen] = useState(false);
 
-  const showMenu = navIsOpen ? "" : styles.menuClosed;
+  const showMenu = navIsOpen ? styles.open : "";
 
   return (
-    <aside>
-      <nav className={`${styles.container} ${showMenu}`}>
-        {navigationList.map(({ name, path }) => (
-          <a href={path}>{name}</a>
-        ))}
-      </nav>
-
+    <>
+      <aside className={`${styles.container} ${showMenu}`}>
+        <nav className={`${styles.nav}`}>
+          {items.map(({ name, path }) => (
+            <a href={path}>{name}</a>
+          ))}
+        </nav>
+      </aside>
       <label
         className={styles.hamburgerMenu}
         aria-label="toogle hamburger menu"
@@ -30,7 +35,7 @@ function MobileNav() {
           <span id={styles.bottomBar} />
         </span>
       </label>
-    </aside>
+    </>
   );
 }
 
