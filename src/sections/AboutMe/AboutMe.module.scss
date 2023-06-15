@@ -2,37 +2,35 @@
   color: var(--background-color);
   background-color: var(--tertiary-color);
 
+  align-items: center;
   .header {
-    font-weight: bolder;
-
     span {
-      font-size: var(--font-size-900);
-
       color: var(--main-color);
     }
   }
-  .subHeader {
-    font-size: var(--font-size-600);
+
+  .aboutme {
+    align-self: flex-start;
+    max-width: 30ch;
+    font-size: var(--font-size-400);
+  }
+
+  .sideImage {
+    min-height: 400px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    & > img {
+      position: absolute;
+    }
   }
 }
 
-.traitsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  text-align: start;
-
-  .trait > span {
-    color: var(--main-color);
-    font-weight: bold;
-  }
-}
-
-.left {
-  width: 100%;
-}
 @media (min-width: 768px) {
   .container {
     grid-template-columns: 1fr 1fr;
+    .aboutme {
+      align-self: center;
+    }
   }
 }

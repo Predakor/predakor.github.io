@@ -1,55 +1,60 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import MotionSVG from "../../components/MotionSVG";
 import styles from "./AboutMe.module.scss";
 
-const traits = [
-  {
-    trait: "Passionate",
-    description: "to craft all his websites with love and passion.",
-  },
-  {
-    trait: "Tenacious",
-    description: "to constantly learn and improve his knowledge.",
-  },
-  {
-    trait: "Independent",
-    description: "in learning everything on his own.",
-  },
-  {
-    trait: "Ready",
-    description: "to bring your next big project to life.",
-  },
-];
+const cubeV = {
+  pop: { y: ["50%", "0%"] },
+};
 
 function AboutMe() {
+  const { scrollYProgress } = useScroll();
   return (
     <section id="aboutme" className={styles.container}>
       <h2 className={styles.header}>
         <span>A front end</span> developer
       </h2>
 
-      <div>
-        <h3 className={styles.subHeader}>Who is</h3>
+      <motion.div
+        whileInView={{ y: ["-50%", "0%"] }}
+        transition={{ duration: 0.7 }}
+        className={styles.aboutme}
+      >
+        I am a self-taught front-end developer with two years of experience
+        creating websites and web applications. My passion for front-end and
+        programming drives me to never stop learning and strive for perfection.
+        In the future, I aspire to transition into full-stack or game
+        development.
+      </motion.div>
 
-        <div className={styles.traitsContainer}>
-          {traits.map(({ trait, description }) => (
-            <motion.p
-              initial={{ y: "300%", opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className={styles.trait}
-              key={trait}
-            >
-              <span>{trait}</span> {description}
-            </motion.p>
-          ))}
-        </div>
-      </div>
-
-      <div className={styles.left}>
-        {/* rome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
-        <MotionSVG />
+      <div className={styles.sideImage}>
+        <motion.img
+          drag
+          whileInView={{ x: ["50%", "0%"], opacity: [0, 1] }}
+          transition={{ delay: 0.5, duration: 0.7 }}
+          src="side-image/desk.svg"
+          alt=""
+        />
+        <motion.img
+          drag
+          whileInView={{ x: ["-50%", "0%"], opacity: [0, 1] }}
+          transition={{ delay: 0.5, duration: 0.7 }}
+          src="side-image/layer.svg"
+          alt=""
+        />
+        <motion.img
+          drag
+          whileInView={{ y: ["50%", "0%"], opacity: [0, 1] }}
+          transition={{ delay: 0.5, duration: 0.7 }}
+          src="side-image/computer.svg"
+          alt=""
+        />
+        <motion.img
+          drag
+          whileInView={{ y: ["-50%", "0%"], opacity: [0, 1] }}
+          transition={{ delay: 0.5, duration: 0.7 }}
+          src="side-image/chair.svg"
+          alt=""
+        />
       </div>
     </section>
   );

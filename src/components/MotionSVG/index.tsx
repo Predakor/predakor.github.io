@@ -27,7 +27,6 @@ function index() {
       <motion.polygon
         initial={draw.hidden}
         whileInView={draw.visible}
-        viewport={{ once: true }}
         width="140"
         height="140"
         x={300 - 70}

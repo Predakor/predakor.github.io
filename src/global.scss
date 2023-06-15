@@ -48,8 +48,7 @@ html {
   scroll-snap-type: y mandatory;
 
   &::-webkit-scrollbar {
-    width: 0.4vw;
-    animation: appear;
+    width: clamp(0.25em, 0.5vw, 1em);
   }
   &::-webkit-scrollbar-thumb {
     background: var(--main-color);
@@ -147,7 +146,7 @@ button {
   section {
     margin-block: 10em;
     padding: 2em;
-    .header {
+    h2 {
       grid-column: 1/-1;
     }
   }
