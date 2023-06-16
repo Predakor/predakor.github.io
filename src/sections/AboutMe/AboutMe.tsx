@@ -1,61 +1,91 @@
 import { motion, useScroll } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import MotionSVG from "../../components/MotionSVG";
 import styles from "./AboutMe.module.scss";
 
-const cubeV = {
-  pop: { y: ["50%", "0%"] },
+const textV = {
+  pop: { opacity: [0, 0.5, 1], y: ["-100%", "-50%", "0%"] },
+};
+const aboutMeV = {
+  pop: { transition: { delayChildren: 0.1 } },
 };
 
 function AboutMe() {
   const { scrollYProgress } = useScroll();
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
   return (
     <section id="aboutme" className={styles.container}>
-      <h2 className={styles.header}>
+      <motion.h2
+        whileInView={{ opacity: [0.5, 1], y: ["-50%", "0%"] }}
+        className={styles.header}
+      >
         <span>A front end</span> developer
-      </h2>
+      </motion.h2>
 
       <motion.div
-        whileInView={{ y: ["-50%", "0%"] }}
+        variants={aboutMeV}
+        whileInView={"pop"}
         transition={{ duration: 0.7 }}
         className={styles.aboutme}
       >
-        I am a self-taught front-end developer with two years of experience
-        creating websites and web applications. My passion for front-end and
-        programming drives me to never stop learning and strive for perfection.
-        In the future, I aspire to transition into full-stack or game
-        development.
+        <motion.p variants={textV}>
+          <span className={styles.trait}>Passionate </span>
+          self-taught developer driven by a deep passion for web.
+        </motion.p>
+        <motion.p variants={textV}>
+          <span className={styles.trait}>Perfectionist </span>
+          constantly refining and improving his code.
+        </motion.p>
+        <motion.p variants={textV}>
+          <span className={styles.trait}>Eager </span>
+          always learning new stuff and pushing his skils.
+        </motion.p>
+        <motion.p variants={textV}>
+          <span className={styles.trait}>Ambitious </span>
+          everyday 1 step closer to achieving his goals
+        </motion.p>
       </motion.div>
 
-      <div className={styles.sideImage}>
-        <motion.img
-          drag
-          whileInView={{ x: ["50%", "0%"], opacity: [0, 1] }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          src="side-image/desk.svg"
-          alt=""
-        />
-        <motion.img
-          drag
-          whileInView={{ x: ["-50%", "0%"], opacity: [0, 1] }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          src="side-image/layer.svg"
-          alt=""
-        />
-        <motion.img
-          drag
-          whileInView={{ y: ["50%", "0%"], opacity: [0, 1] }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          src="side-image/computer.svg"
-          alt=""
-        />
-        <motion.img
-          drag
-          whileInView={{ y: ["-50%", "0%"], opacity: [0, 1] }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          src="side-image/chair.svg"
-          alt=""
-        />
-      </div>
+      {isDesktop && (
+        <div className={styles.sideImage}>
+          <motion.img
+            whileInView={{ x: ["50%", "0%"], opacity: [0, 1] }}
+            transition={{ delay: 0.5, duration: 0.7 }}
+            src="side-image/desk.svg"
+            alt=""
+          />
+          <motion.img
+            whileInView={{
+              x: ["-50%", "0%"],
+              y: ["-50%", "0%"],
+              opacity: [0, 1],
+            }}
+            transition={{ delay: 1.1, duration: 1 }}
+            src="side-image/plant.svg"
+            alt=""
+          />
+          <motion.img
+            whileInView={{
+              x: ["50%", "0%"],
+              y: ["-50%", "0%"],
+              opacity: [0, 1],
+            }}
+            transition={{ delay: 1, duration: 0.7 }}
+            src="side-image/computer.svg"
+            alt=""
+          />
+          <motion.img
+            whileInView={{
+              x: ["-50%", "0%"],
+              y: ["50%", "0%"],
+              opacity: [0, 1],
+            }}
+            transition={{ delay: 1.5, duration: 0.7 }}
+            src="side-image/chair.svg"
+            alt=""
+          />
+        </div>
+      )}
     </section>
   );
 }

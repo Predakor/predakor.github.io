@@ -5,6 +5,7 @@
   margin-bottom: 20em;
   gap: 2em;
 
+  scroll-snap-align: start;
   .header {
     color: var(--background-color);
   }
