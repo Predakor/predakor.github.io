@@ -1,28 +1,19 @@
-.containter {
-  display: grid;
-  background: var(--main-color);
-  grid-template-rows: auto 1fr;
-  margin-bottom: 20em;
-  gap: 2em;
+$background: var(--main-color);
 
+.container {
   scroll-snap-align: start;
-  .header {
-    color: var(--background-color);
-  }
-
+  background-color: $background;
+  padding-bottom: 10em;
   .projectsContainer {
     display: grid;
-    grid-auto-flow: row;
-    grid-auto-columns: 1fr;
-    gap: 2em;
-    padding: 2em;
+    gap: 10em;
   }
 }
 
-@media (min-width: 678px) {
-  .containter {
+@media (min-width: 768px) {
+  .container {
+    gap: 5em;
     .projectsContainer {
-      align-items: center;
     }
   }
 }

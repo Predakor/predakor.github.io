@@ -55,11 +55,11 @@ html {
 }
 
 #root {
-  header {
+  & > header {
     padding: 1em;
   }
 
-  footer {
+  & > footer {
     background-color: var(--secondary-color);
     scroll-snap-align: end;
   }

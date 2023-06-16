@@ -13,11 +13,17 @@ function useProjects() {
       if (!res.ok) throw new Error("something went wrong");
 
       const data: Array<Project> = await res.json();
-      const validProjects = data.filter((project) => {
-        return project.homepage && project.name !== "predakor.github.io";
-      });
 
-      setProjects(validProjects);
+      const featuredProjects = [
+        {
+          ...data.find((project) => project.name === "spotify-web-player"),
+          name: "discofy",
+        },
+        data.find((project) => project.name === "typer"),
+        data.find((project) => project.name === "tasker"),
+      ] as Project[];
+
+      setProjects(featuredProjects);
     };
     fetchProjects();
   }, []);

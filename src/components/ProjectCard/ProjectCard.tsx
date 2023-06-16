@@ -15,16 +15,13 @@ function ProjectCard({ project }: { project: Project }) {
       transition={{ delay: 0.2, duration: 0.6 }}
       className={styles.project}
     >
-      <motion.h3>{name}</motion.h3>
-      <ProjectImage projectName={name} />
-
-      <div className={styles.contentContainer}>
+      <div>
+        <motion.h3>{name}</motion.h3>
         <p>{description}</p>
-
-        <Tags tags={topics} />
-
         <ProjectLinks repository={url} homepage={homepage} />
       </div>
+      <ProjectImage projectName={name} />
+      <Tags tags={topics} />
     </motion.article>
   );
 }
