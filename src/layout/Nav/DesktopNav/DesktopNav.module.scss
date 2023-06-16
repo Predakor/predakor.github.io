@@ -4,6 +4,7 @@
   z-index: 100;
   .links {
     display: flex;
+    justify-content: end;
     gap: 0.5em;
     a {
       color: var(--headline-color);

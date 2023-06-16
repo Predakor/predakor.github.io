@@ -1,6 +1,5 @@
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
-import MotionSVG from "../../components/MotionSVG";
 import styles from "./AboutMe.module.scss";
 
 const textV = {
@@ -11,7 +10,6 @@ const aboutMeV = {
 };
 
 function AboutMe() {
-  const { scrollYProgress } = useScroll();
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   return (
     <section id="aboutme" className={styles.container}>
