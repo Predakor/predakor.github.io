@@ -1,53 +1,57 @@
-@mixin list() {
+.container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
+  grid-template-rows: auto 1fr;
   gap: 1em;
-}
-
-.skilsSection {
-  display: grid;
 
   .sectionHeader {
-    grid-column: 1/-1;
     color: var(--tertiary-color);
   }
-  .subHeader {
-    margin-block: 1em;
+  .skilsList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .iconContainer {
+      display: grid;
+      place-items: center;
+      gap: 0.25em;
+
+      img {
+        width: 2em;
+        aspect-ratio: 1/1;
+        align-self: flex-end;
+      }
+    }
   }
 }
 
-.iconContainer {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  place-items: center;
+@media (min-width: 1024px) {
+  .container {
+    place-items: center;
+    .skilsList {
+      grid: repeat(2, 1fr) / repeat(5, 1fr);
+      gap: 2.5em;
+      padding: 2.5em;
 
-  img {
-    width: 2em;
-    height: 2em;
-  }
-}
+      .iconContainer {
+        $duration: 600ms;
+        padding: 1em;
+        transition: $duration;
+        aspect-ratio: 1/1;
 
-.technologies {
-  .list {
-    @include list();
-  }
-}
+        &:hover {
+          scale: 1.2;
+          background: #1f1f25;
+          border-radius: 2em;
+        }
+        img {
+          width: 50%;
+          transition: $duration;
 
-.tools {
-  .list {
-    @include list();
-  }
-}
-
-@media (min-width: 768px) {
-  .skilsSection {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .technologies {
-    .list {
-      flex-direction: row;
+          &:hover {
+            transform: rotate(360deg);
+          }
+        }
+      }
     }
   }
 }

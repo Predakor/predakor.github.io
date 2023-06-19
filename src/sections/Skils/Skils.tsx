@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import styles from "./Skils.module.scss";
 
 const technologies = [
@@ -12,84 +12,30 @@ const technologies = [
   { name: "Tailwind", icon: "/logo/tailwind-icon.svg" },
   { name: "DaisyUI", icon: "/logo/daisyui-icon.svg" },
   { name: "Html", icon: "/logo/html-icon.svg" },
-  { name: "SCSS", icon: "/logo/scss-icon.svg" },
-  { name: "Cypress", icon: "/logo/cypress-icon.svg" },
 ];
-
-const tools = [
-  { name: "Git/Github", icon: "/logo/github-icon.svg" },
-  { name: "Pop_OS", icon: "/logo/popos-icon.svg" },
-  { name: "vsCode", icon: "/logo/vscode-icon.svg" },
-];
-
-const list = {
-  hide: {},
-  pop: {
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const items = {
-  hide: { opacity: 0, scale: 0 },
-  pop: {
-    opacity: 1,
-    scale: [0, 1.5, 1],
-  },
-};
 
 function Skils() {
+  const { scrollY } = useScroll();
   return (
-    <section id="skils" className={styles.skilsSection}>
-      <h2 className={styles.sectionHeader}>Working with</h2>
+    <section id="skils" className={styles.container}>
+      <h2 className={styles.sectionHeader}>Skills</h2>
 
-      <motion.div
-        initial="hidden"
-        whileInView={"pop"}
-        variants={list}
-        className={styles.technologies}
-      >
-        <h3 className={styles.subHeader}>Technologies</h3>
-        <ul className={styles.list}>
-          {technologies.map((technology, i) => (
-            <motion.li
-              variants={items}
-              className={styles.iconContainer}
-              key={technology.name}
-            >
-              <img
-                src={technology.icon}
-                alt={technology.name}
-                role={"presentation"}
-              />
-              <span>{technology.name}</span>
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView={"pop"}
-        variants={list}
-        className={styles.tools}
-      >
-        <h3 className={styles.subHeader}>Tools</h3>
-        <ul className={styles.list}>
-          {tools.map((skil) => (
-            <motion.li
-              variants={items}
-              className={styles.iconContainer}
-              key={skil.name}
-            >
-              <img src={skil.icon} alt={skil.name} role={"presentation"} />
-              <span>{skil.name}</span>
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
+      {/* <h3 className={styles.subHeader}>Technologies</h3> */}
+      <motion.ul className={styles.skilsList}>
+        {technologies.map(({ icon, name }, i) => (
+          <motion.li
+            whileInView={{
+              x: [500 * (i >= 5 ? 1 : -1), 0],
+            }}
+            transition={{ duration: 1 }}
+            className={styles.iconContainer}
+            key={name}
+          >
+            <img src={icon} alt={name} />
+            <span>{name}</span>
+          </motion.li>
+        ))}
+      </motion.ul>
     </section>
   );
 }
