@@ -4,7 +4,6 @@ import Divider from "../../components/Divider/Divider";
 import EmailForm from "../../components/EmailForm/EmailForm";
 import Socials from "../../components/Socials/Socials";
 import styles from "./Contact.module.scss";
-
 function Contact() {
   const isLargeScreen = useMediaQuery({ minWidth: "1024px" });
   return (
@@ -17,13 +16,17 @@ function Contact() {
           transition={{ delay: 0.2, type: "tween" }}
           className={styles.emailContainer}
         >
-          <motion.h3 className={styles.subHeader}>Email</motion.h3>
+          {isLargeScreen && (
+            <motion.h3 className={styles.subHeader}>Email</motion.h3>
+          )}
           <EmailForm />
         </motion.div>
 
-        <button className={styles.resumeButton} type="button">
-          Get resume
-        </button>
+        {!isLargeScreen && (
+          <button className={`${styles.resumeButton} button`} type="button">
+            Get resume
+          </button>
+        )}
 
         {isLargeScreen ? <hr /> : <Divider />}
 
@@ -32,11 +35,13 @@ function Contact() {
           transition={{ delay: 0.2, type: "tween" }}
           className={styles.socialsContainer}
         >
-          <h3 className={styles.subHeader}>Socials</h3>
+          {isLargeScreen && <h3 className={styles.subHeader}>Socials</h3>}
           <Socials />
-          <button className={styles.resumeButton} type="button">
-            Get resume
-          </button>
+          {isLargeScreen && (
+            <button className={`${styles.resumeButton} button`} type="button">
+              Get resume
+            </button>
+          )}
         </motion.div>
       </div>
     </section>

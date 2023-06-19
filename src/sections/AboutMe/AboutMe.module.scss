@@ -1,15 +1,28 @@
 .container {
-  color: var(--background-color);
-  background-color: var(--tertiary-color);
-
+  display: grid;
   grid-template-rows: auto 2fr auto;
   padding: 2em;
+
+  color: var(--background-color);
+  background-color: var(--tertiary-color);
 
   .header {
     span {
       color: var(--main-color);
     }
   }
+
+  .sideImage {
+    aspect-ratio: 1/1;
+    position: relative;
+    display: grid;
+    place-items: center;
+    & > img {
+      position: absolute;
+      width: min(500px, 100%);
+    }
+  }
+
   .aboutme {
     display: flex;
     flex-direction: column;
@@ -32,7 +45,12 @@
 @media (min-width: 768px) {
   .container {
     grid: auto 1fr/ 2fr 1fr;
-    padding-inline: 5em;
+    align-items: center;
+
+    .header {
+      grid-column: 1/-1;
+    }
+
     .aboutme {
       max-width: 40ch;
       font-size: var(--font-size-500);
@@ -43,22 +61,6 @@
         .trait {
           font-size: var(--font-size-600);
         }
-      }
-    }
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    padding-inline: 5em;
-
-    .sideImage {
-      position: relative;
-      display: grid;
-      place-items: center;
-      & > img {
-        position: absolute;
-        width: min(500px, 100%);
       }
     }
   }

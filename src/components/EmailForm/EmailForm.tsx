@@ -38,7 +38,9 @@ function Email() {
         rows={4}
         required
       />
-      <button type="submit">Send email</button>
+      <button className="button" type="submit">
+        Send email
+      </button>
     </form>
   );
 }

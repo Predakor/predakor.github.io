@@ -16,7 +16,9 @@ function MobileNav({ items }: Props) {
       <aside className={`${styles.container} ${showMenu}`}>
         <nav className={`${styles.nav}`}>
           {items.map(({ name, path }) => (
-            <a href={path}>{name}</a>
+            <a href={path} key={path}>
+              {name}
+            </a>
           ))}
         </nav>
       </aside>

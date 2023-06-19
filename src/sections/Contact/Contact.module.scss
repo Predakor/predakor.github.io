@@ -2,12 +2,11 @@ $space-sm: 1em;
 $color: var(--tertiary-color);
 
 .container {
-  scroll-snap-align: start;
-  margin-bottom: 0;
-
-  .subHeader {
-    display: none;
-  }
+  display: grid;
+  align-items: stretch;
+  grid-template-rows: auto 1fr;
+  gap: 0.5em;
+  padding-bottom: 0.25em;
 
   .otherContainer {
     display: grid;
@@ -23,14 +22,6 @@ $color: var(--tertiary-color);
         padding: $space-sm;
       }
     }
-
-    .socialsContainer {
-      height: fit-content;
-
-      & > .resumeButton {
-        display: none;
-      }
-    }
   }
 }
 .resumeButton {
@@ -40,11 +31,11 @@ $color: var(--tertiary-color);
     outline-color: $color;
   }
 }
+
 @media (min-width: 678px) {
   .otherContainer {
     grid: 1fr/ 1fr auto auto;
-
-    .resumeButton {
+    & > .resumeButton {
       display: none;
     }
   }
@@ -52,10 +43,7 @@ $color: var(--tertiary-color);
 
 @media (min-width: 1024px) {
   .container {
-    .subHeader {
-      display: block;
-    }
-
+    place-items: center;
     .otherContainer {
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
@@ -64,10 +52,6 @@ $color: var(--tertiary-color);
       .socialsContainer {
         display: grid;
         grid-template-rows: auto 1fr auto;
-
-        .resumeButton {
-          display: block;
-        }
       }
       hr {
         align-self: stretch;
